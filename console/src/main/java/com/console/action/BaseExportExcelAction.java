@@ -1,5 +1,6 @@
 package com.console.action;
 
+import com.commons.service.GenericService;
 import com.commons.util.core.BL3Utils;
 import com.commons.util.core.Dto;
 import com.commons.util.core.WebUtils;
@@ -7,6 +8,8 @@ import com.opensymphony.xwork2.ActionSupport;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -25,6 +28,8 @@ public abstract class BaseExportExcelAction extends ActionSupport implements Ser
     protected HttpServletResponse response;
     protected OutputStream outputStream;
     protected Dto pDto;
+	protected GenericService publicService;
+
 
 	@Override
 	public void setServletResponse(HttpServletResponse arg0) {
@@ -56,5 +61,15 @@ public abstract class BaseExportExcelAction extends ActionSupport implements Ser
 		this.outputStream.flush();
 		this.outputStream.close();
 	}
-	
+
+	@Autowired
+	@Qualifier("publicService")
+	public void setPublicService(GenericService publicService) {
+		this.publicService = publicService;
+	}
+
+	public GenericService getPublicService() {
+		return publicService;
+	}
+
 }
