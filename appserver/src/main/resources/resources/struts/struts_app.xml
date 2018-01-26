@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+	<!-- App部分配置 -->
+	<package name="app" namespace="/" extends="interceptor" strict-method-invocation="false">
+
+		<!-- 为此包下的所有action应用拦截器 -->
+		<default-interceptor-ref name="appInterceptor" />
+
+		<action name="*_*" class="system.app.action.{2}Action" method="{1}">
+		</action>
+	</package>
+
+</struts>

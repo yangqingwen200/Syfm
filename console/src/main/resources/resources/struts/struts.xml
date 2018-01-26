@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<constant name="struts.action.extension" value="do,html" />
+	<constant name="struts.multipart.maxSize" value="5242880000" />
+	<constant name="struts.multipart.saveDir" value="/tmp" />
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.objectFactory.spring.autoWire.alwaysRespect" value="true" />
+	<!-- 支持action名称中使用斜杠 -->
+	<!-- <constant name="struts.enable.SlashesInActionNames" value="true"/> -->
+	
+	<!-- 公用的拦截器 -->
+	<package name="interceptor" extends="struts-default" strict-method-invocation="false">
+		<interceptors>
+			<interceptor name="loginInterceptor" class="com.console.interceptor.LoginInterceptor">
+			</interceptor>
+			<interceptor name="permissionInterceptor" class="com.console.interceptor.PermissionInterceptor">
+			</interceptor>
+			<interceptor name="saveLogInterceptor" class="com.console.interceptor.SaveLogInterceptor">
+			</interceptor>
+		</interceptors>
+	</package>
+
+	<include file="resources/struts/struts_web.xml" />
+</struts>

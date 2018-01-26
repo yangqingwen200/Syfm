@@ -1,0 +1,62 @@
+.page-forward-go-page {
+    width: 45px;
+    display: inline;
+    padding: 0;
+    text-align: center;
+    margin: 0 3px;
+}
+
+.page-forward-setpagesize {
+    display: inline;
+    width: 50px;
+    padding: 4px;
+}
+
+.panel-heading-custom {
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0
+}
+
+.panel-custom {
+    border-color: #ddd;
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.panel-body-custom {
+    padding-bottom: 5px;
+}
+
+.panel-footer-custom {
+    padding: 0;
+}
+
+.span-plus {
+    cursor: pointer;
+    color: #337ab7;
+}
+
+.span-plus-disable {
+    cursor: default;
+    color: #337ab7;
+    opacity:0.65;
+}
+
+.toolbar-crud {
+    margin-top: 20px;
+}
+
+.dialog-title {
+    font-weight: bold;
+    padding-left: 5px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.not-allowed {
+    cursor: not-allowed;
+    opacity: 0.5;
+}

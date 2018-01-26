@@ -1,0 +1,40 @@
+#north_frame_search {
+    margin: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.add-edit-form-table {
+    font-size: 12px;
+    text-align: left;
+    border-collapse: separate;
+    border-spacing: 7px 6px;
+}
+
+.default {
+    background-color: #0081c2;
+    border: 1px #e0ecff outset;
+}
+
+.welcome-button {
+    float: right;
+    margin-right: 10px;
+    margin-top: 18px
+}
+
+.index-form-botton {
+    font-family: 微软雅黑, 宋体;
+    display: inline;
+    font-size: 15px;
+    padding: 4px 120px 4px 120px;  /*上左右下*/
+}
+
+.west-nav {
+    display: block;
+    cursor: pointer;
+    padding: 5px 16px;
+}
+
+#north_frame {
+    height: 60px;
+}

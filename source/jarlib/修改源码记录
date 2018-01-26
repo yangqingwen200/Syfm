@@ -1,0 +1,11 @@
+1. 2017.07.20: 修改datagrid的默认行高
+    修改\js\jquery-easyui-1.4.4\themes\bootstrap\easyui.css
+    1334行: datagrid-row 由25px改成30px
+
+2. 2017.07.20: 修改datagrid的表头加粗
+    修改\js\jquery-easyui-1.4.4\themes\bootstrap\easyui.css
+    1359行: datagrid-header .datagrid-cell 增加font-weight: bold;
+
+3. 2017.07.28: 修改panel的title高度
+    修改\js\jquery-easyui-1.4.4\themes\bootstrap\easyui.css
+    129行: .panel-title height: 16-->20px, line-height: 16-->20px;

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+	<!-- PC网站部分配置 -->
+	<package name="pc" extends="interceptor" strict-method-invocation="false">
+		<!-- 为此包下的所有action应用拦截器 -->
+		<default-interceptor-ref name="pcInterceptor" />
+		<global-results>
+			<result name="error">/WEB-INF/pages/common/error.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="error" exception="java.lang.Exception" />
+		</global-exception-mappings>
+	</package>
+
+	<package name="login" namespace="/login" extends="interceptor" strict-method-invocation="false">
+		<action name="*" class="system.pc.action.login.loginAction" method="{1}">
+			<result name="success" type="redirect">/index/index.html</result>
+			<result name="error">/login.jsp</result>
+		</action>
+	</package>
+
+	<!-- 首页 -->
+	<package name="index" namespace="/index" extends="pc" strict-method-invocation="false">
+		<action name="index" class="system.pc.action.index.indexAction" method="index">
+			<result name="index">/WEB-INF/pages/index/index.jsp</result>
+		</action>
+	</package>
+
+	<!-- 预约培训 -->
+	<package name="business" namespace="/business" extends="pc" strict-method-invocation="false">
+		<action name="*/*" class="system.pc.action.business.{1}Action" method="{2}">
+			<result>/WEB-INF/pages/business/{1}/{2}.jsp</result>
+		</action>
+
+	</package>
+
+</struts>

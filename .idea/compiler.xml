@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="appserver" />
+        <module name="commons" />
+        <module name="console" />
+        <module name="front" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="appserver" target="1.8" />
+      <module name="commons" target="1.8" />
+      <module name="console" target="1.8" />
+      <module name="front" target="1.8" />
+      <module name="Syfm" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

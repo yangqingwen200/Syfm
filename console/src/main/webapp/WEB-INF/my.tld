@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+	version="2.0">
+	<description>JSTL 1.1 core library</description>
+	<display-name>JSTL core</display-name>
+	<tlib-version>1.1</tlib-version>
+	<short-name>mytag</short-name>
+	<uri>/mytag</uri>
+
+	<tag>
+		<name>toolbar</name>
+		<tag-class>
+			com.console.taglib.ToolBarTag
+		</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<name>name</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>char</type>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>ordEasyuiJs</name>
+		<tag-class>
+			com.console.taglib.OverrideEasyuiJsTag
+		</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<name>all</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>datagrid</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>form</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>dialog</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>combotree</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>pagination</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>rules</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>pageform</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>show</name>
+		<tag-class>
+			com.commons.taglib.ShowTag
+		</tag-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<name>value</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<name>permissionInitJSData</name>
+		<tag-class>
+			com.console.taglib.PermissionPageTag
+		</tag-class>
+		<body-content>JSP</body-content>
+	</tag>
+
+	<tag>
+		<name>menuInitJSData</name>
+		<tag-class>
+			com.console.taglib.MenuPageTag
+		</tag-class>
+		<body-content>JSP</body-content>
+	</tag>
+	
+	<tag>
+		<name>elementInitJSData</name>
+		<tag-class>
+			com.console.taglib.ElementPageTag
+		</tag-class>
+		<body-content>JSP</body-content>
+	</tag>
+	<tag>
+		<name>cityInitJSData</name>
+		<tag-class>
+			com.console.taglib.CityPageTag
+		</tag-class>
+		<body-content>JSP</body-content>
+	</tag>
+	
+	<tag>
+		<name>areaInitJSData</name>
+		<tag-class>
+			com.console.taglib.AreaPageTag
+		</tag-class>
+		<body-content>JSP</body-content>
+	</tag>
+
+</taglib>

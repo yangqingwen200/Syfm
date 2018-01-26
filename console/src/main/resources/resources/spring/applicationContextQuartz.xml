@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 自动备份数据库 -->
+	<bean id="backupSql" class="org.springframework.scheduling.quartz.JobDetailBean">
+		<property name="jobClass">
+			<value>com.appserver.quartz.BackupSql</value>
+		</property>
+	</bean>
+
+	<!-- 调度cron工作(两种定时调度之二:复杂的定时) -->
+	<bean id="backupSqlTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="backupSql" />
+		</property>
+		<property name="cronExpression">
+			<value>0 00 03 * * ?</value>
+		</property>
+	</bean>
+
+	<!-- 启动工作,可以有多个 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="backupSqlTrigger" />
+			</list>
+		</property>
+	</bean>
+</beans>

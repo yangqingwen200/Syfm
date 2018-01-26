@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="initPpConstant" class="com.commons.constant.InitPpConstant">
+		<property name="BAIDU_KEY" value="${BAIDU_KEY}"></property>
+		<property name="LINUX_URL" value="${LINUX_URL}"></property>
+		<property name="LINUX_FOLDER" value="${LINUX_FOLDER}"></property>
+		<property name="JPUSH_MASTER_SECRET" value="${JPUSH_MASTER_SECRET}"></property>
+		<property name="JPUSH_APP_KEY" value="${JPUSH_APP_KEY}"></property>
+		<property name="JPUSH_IOS_PRODUCT" value="${JPUSH_IOS_PRODUCT}"></property>
+		<property name="PAGESIZE" value="${PAGESIZE}"></property>
+		<property name="WIDTH" value="${WIDTH}"></property>
+		<property name="HEIGHT" value="${HEIGHT}"></property>
+		<property name="ISEPSCALING" value="${ISEPSCALING}"></property>
+		<property name="LOCAL" value="${LOCAL}"></property>
+		<property name="IS_PRODUCT" value="${IS_PRODUCT}"></property>
+	</bean>
+</beans>

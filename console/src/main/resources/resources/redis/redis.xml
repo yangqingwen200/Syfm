@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- POOL配置 -->
+	<bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+		<property name="maxTotal" value="${redis.pool.maxTotal}"/>
+		<property name="maxWaitMillis" value="${redis.pool.maxWaitMillis}"/>
+		<property name="testOnBorrow" value="${redis.pool.testOnBorrow}"/>
+	</bean>
+
+	<bean id="cacheRedisClient" class="com.commons.redis.CacheRedisClient">
+		<constructor-arg index="0" ref="poolConfig"/>
+		<constructor-arg index="1" type="String" value="${custombus.cache.host}"/>
+		<constructor-arg index="2" type="int" value="${custombus.cache.port}"/>
+	</bean>
+
+</beans>
