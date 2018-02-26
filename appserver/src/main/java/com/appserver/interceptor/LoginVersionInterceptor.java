@@ -58,10 +58,8 @@ public class LoginVersionInterceptor extends MethodFilterInterceptor {
 		}
 
 		Version v = method.getAnnotation(Version.class); //得到该接口目前版本号
-		String version = request.getParameter("version"); //得到App传递到服务器版本号
 		if(null != v) {
-			String ve = v.version();
-			if(!ve.equals(version)) {
+			if(!v.version().equals(request.getParameter("version"))) { //得到App传递到服务器版本号
 				throw new ValidateException(AppExcEnum.APP_VERSION_LOW);
 			}
 		}

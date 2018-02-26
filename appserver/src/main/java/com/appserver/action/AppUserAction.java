@@ -63,8 +63,7 @@ public class AppUserAction extends BaseAppAction {
 	@Version(version = "1.1")
 	public void getAppUserInfo() {
 		try {
-			this.checkRequestParam("id");
-			Long asLong = dto.getAsLong("id");
+			Long asLong = dto.getAsLong("userId");
 			Map<String, Object> userInfo = this.appUserService.getUserInfo(asLong);
 			json.put("userInfo", userInfo);
 		} catch (Exception e) {
@@ -82,7 +81,6 @@ public class AppUserAction extends BaseAppAction {
 	@Login
 	public void logout() {
 		try {
-			this.checkRequestParam("userId");
 			String userId = dto.getAsString("userId");
 			cacheRedis.del(AppConstant.USER_TOKEN + userId);
 		} catch (Exception e) {
