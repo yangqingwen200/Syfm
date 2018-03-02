@@ -89,6 +89,43 @@ public class AppUserAction extends BaseAppAction {
 		this.renderJson();
 	}
 
+	public void getSchool() {
+		try {
+			this.checkRequestParam("pageNow");
+			Integer pageNow = dto.getAsInteger("pageNow");
+			Map<String, Object> school = this.appUserService.getSchool(pageNow);
+			json.putAll(school);
+		} catch (Exception e) {
+			this.checkException(e);
+		}
+		this.renderJson();
+	}
+
+	public void schoolDetail() {
+		try {
+			this.checkRequestParam("id");
+			Integer id = dto.getAsInteger("id");
+			Map<String, Object> school = this.appUserService.getSchoolDetail(id);
+			json.put("detail", school);
+		} catch (Exception e) {
+			this.checkException(e);
+		}
+		this.renderJson();
+	}
+
+	public void aroundFriend() {
+		try {
+			this.checkRequestParam("pageNow");
+			Integer pageNow = dto.getAsInteger("pageNow");
+			String name = dto.getAsStringTrim("name");
+			Map<String, Object> school = this.appUserService.getAroundFriend(pageNow, name);
+			json.putAll(school);
+		} catch (Exception e) {
+			this.checkException(e);
+		}
+		this.renderJson();
+	}
+
 	public File getImgFile() {
 		return imgFile;
 	}

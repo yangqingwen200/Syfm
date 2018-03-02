@@ -31,6 +31,7 @@ public abstract class BaseAction extends ActionSupport implements ServletRequest
 	public void setServletResponse(HttpServletResponse arg0) {
 		this.response = arg0;
 		this.response.setContentType("text/html; charset=utf-8");
+		this.response.setHeader("Access-Control-Allow-Origin", "*");
 		try {
 			this.out = this.response.getWriter();
 		} catch (IOException e) {
