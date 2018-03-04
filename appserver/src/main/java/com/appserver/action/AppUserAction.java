@@ -118,8 +118,22 @@ public class AppUserAction extends BaseAppAction {
 			this.checkRequestParam("pageNow");
 			Integer pageNow = dto.getAsInteger("pageNow");
 			String name = dto.getAsStringTrim("name");
-			Map<String, Object> school = this.appUserService.getAroundFriend(pageNow, name);
+			String state = dto.getAsStringTrim("state");
+			Map<String, Object> school = this.appUserService.getAroundFriend(pageNow, name, state);
 			json.putAll(school);
+		} catch (Exception e) {
+			this.checkException(e);
+		}
+		this.renderJson();
+	}
+
+	@Login
+	public void friendDetail() {
+		try {
+			this.checkRequestParam("friendId");
+			Integer userId = dto.getAsInteger("friendId");
+			Map<String, Object> school = this.appUserService.getFriendDetail(userId);
+			json.put("detail", school);
 		} catch (Exception e) {
 			this.checkException(e);
 		}
