@@ -28,7 +28,11 @@ public interface AppUserService extends GenericService  {
 
 	Map<String, Object> getAroundFriend(Integer pageNow, String name, String  state);
 
+	Map<String, Object> getIndex(Integer pageNow, String category);
+
 	Map<String, Object> getSchoolDetail(Integer id);
 
 	Map<String,Object> getFriendDetail(Integer userId);
+
+
 }

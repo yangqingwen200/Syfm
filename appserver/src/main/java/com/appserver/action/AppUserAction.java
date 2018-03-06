@@ -140,6 +140,19 @@ public class AppUserAction extends BaseAppAction {
 		this.renderJson();
 	}
 
+	public void index() {
+		try {
+			this.checkRequestParam("pageNow");
+			Integer pageNow = dto.getAsInteger("pageNow");
+			String category = dto.getAsStringTrim("category");
+			Map<String, Object> school = this.appUserService.getIndex(pageNow, category);
+			json.putAll(school);
+		} catch (Exception e) {
+			this.checkException(e);
+		}
+		this.renderJson();
+	}
+
 	public File getImgFile() {
 		return imgFile;
 	}
